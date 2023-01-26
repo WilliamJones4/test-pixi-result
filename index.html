@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Canvas </title>
+  <link href="./main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <div style="width: 100vw; position: absolute; top: 0;">
+    <button id="task1"> Task1 </button>
+    <button id="task2"> Task2 </button>
+    <button id="task3"> Task3 </button>
+  </div>
+  <div
+    style="
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      display: flex;
+      background-color: #241f21;
+    "
+    id="start_panel"
+  >
+    <button
+      style="
+        height: 100px;
+        width: 300px;
+        margin: auto;
+        font-size: 48px;
+      "
+      onclick="onStart()";
+    >
+      Start
+    </button>
+  </div>
+  <script src="app.js"></script>
+  <script type="text/javascript">
+    function onStart() {
+      var start_panel = document.getElementById("start_panel");
+      goFullscreen();
+      start_panel.style.display = "none";
+    }
+    function goFullscreen() {
+      var element = document.documentElement;
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen();
+      }
+    }
+  </script>
+</body>
+</html>
